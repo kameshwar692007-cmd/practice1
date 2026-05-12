@@ -1,0 +1,112 @@
+*{
+        margin:0;
+        padding:0;
+        
+}
+:root{
+    --font-color:rgb(255, 255, 255);
+    --btn-clr:rgba(0, 0, 255, 0.355);
+    --container-border:rgb(183, 182, 182);
+    --btn-hover-clr:var(--font-color);
+    --btn-hover-text-clr:var(--btn-clr);
+    --msgfont-color:rgb(61, 61, 61);
+}
+body{
+    margin:0;
+    padding:0;
+    background-image:url("formbg.jpg");
+    background-size:cover;
+    background-repeat: no-repeat; 
+    background-position: center;
+    height:100vh;
+}
+.login-container{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height:100vh;
+    width: 100%;  
+}
+.login-container h1{
+    color: var(--font-color);
+    font-size: 5vh;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.login-container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    background-position: fixed;
+    border:2px solid var(--container-border);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    border-radius: 10px;
+}
+button{
+    padding: 10px 20px;
+    background-color: var(--btn-clr);   
+    color: var(--font-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+button:hover{
+    background-color: var(--btn-hover-clr);
+    color: var(--btn-hover-text-clr);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.input-group{
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    margin-bottom: 25px;
+}
+input{
+    width:100%;
+    padding:10px 5px;
+    background: transparent;
+    border:none;
+    border-bottom:2px solid var(--container-border);
+    outline:none;
+    font-size:16px;
+}
+.btn-grp{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+#msg-container{
+
+    color: var(--msgfont-color);
+    font-size: 16px;
+    font-family: sans-serif;
+    border: 2px solid var(--container-border);
+    padding: 30px;
+    border-radius: 5px;
+    background-color:transparent;
+    backdrop-filter: blur(15px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+p{
+    display:none;
+    padding: 20px;
+    background-color:white ;
+    border: 2px solid rgb(245, 187, 129);
+    border-radius: 10px;
+}
+p{ animation: slideIn 0.5s ease-in-out; }
+@keyframes slideIn {
+    0%{transform: translateX(-20%);}
+    50%{transform: translateX(10%);}
+    100%{transform: translateX(0);} 
+}

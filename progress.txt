@@ -1,0 +1,13 @@
+made a register page which works fine and can be reused added db which stores the user data 
+next plan:-
+work backend logic for login form which checks the users with the db if user exists it log them in  : completed
+work with the encryption and decryption of the password for  the user safety
+
+help me TTT
+
+
+day 4 of making a full fledged web app added error msg box and intruction for users about the constraints(basic 6 digit pass and stuffs)
+day 5 made my device as serverand db and the client side can be accessed by any device with the devicceipaddress and port no. and the ext device must be connected to same wifi as the server device
+day 6 added the login verification system which checks the db for the user email and password if the user exist it logs them in or else it pushes the error message 
+day 7 theres some error in github and vs code connectiion iig TT TT :(
+ 

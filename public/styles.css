@@ -1,0 +1,78 @@
+*{
+    margin:0;
+    padding:0;
+}
+:root{
+--splfont-color:rgb(0, 0, 0);}
+.navbar{
+    background-color: blueviolet;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: flex;
+
+}
+nav a{
+    color:var(--splfont-color);
+    font-size:4vh;
+    text-decoration: none;
+    display: flex;
+    align-items: end;
+    flex-shrink: 1;
+    padding-left: 20px;  
+    justify-self: center;
+}
+nav a:hover{
+    color: white;
+    transform: scale(1.1);
+    text-decoration: dotted underline;
+    text-decoration-color: srgb(0, 255, 0);
+}
+h1{
+    color:blue;
+    font-family:monospace;
+    text-decoration:line-through;
+}
+.NAME{
+    font-size: 5vh;
+    word-spacing: 1px;
+    letter-spacing: 2px;
+    margin-right: auto;
+}
+.NAME:hover{
+    color: var(--splfont-color);
+    transform: scale(1.0);
+    text-decoration:none;
+}
+.navcontainer{
+    display: flex;
+    height: 100vh;
+    z-index: 1;
+}
+.mobile-nav{
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    margin-left:auto;
+    background-color: blueviolet;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+@media(max-width:600px){
+    .navbar{
+        display: none;
+    }
+    .mobile-nav{
+        display: flex;
+        width: 100vh;
+    }
+}
+@media(max-width:800px){
+    .mobile-nav{
+        display: flex;
+    } 
+    .navbar{
+        display: none;
+    }
+}

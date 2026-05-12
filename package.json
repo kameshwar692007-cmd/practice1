@@ -1,0 +1,27 @@
+{
+  "name": "practice1",
+  "version": "1.0.0",
+  "description": "The idea here is to make a web page to showcase some great leaders of TN, cuz y not since the end of election i just realized that these 2k kids need to be educated about some old leaders and how to select a goood leader and a best leader and a real leader u may ask me all those three terms are same but they are not same if u know u know. Im the one who is choosing the leaders to be in this webpase \"awareness site\"\r called INSPIRE Free. so the leaders are > :3 u will see soon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kameshwar692007-cmd/practice1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kameshwar692007-cmd/practice1/issues"
+  },
+  "homepage": "https://github.com/kameshwar692007-cmd/practice1#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.3"
+  }
+}

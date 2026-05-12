@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="logstyles.css">
+</head>
+
+<body>
+    <div class="login-container">
+        <h1 class="login-title">Login</h1>
+        <form>
+
+            <div class="input-group">
+                <input type="text" id="email" name="email" required placeholder="Email"><br><br>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" name="password" required placeholder="Password"><br><br>
+            </div>
+
+            <div class="btn-grp">
+                <button type="button" onclick="window.location.href='register.html'">Register new user</button>
+                <button type="submit">Login</button>
+            </div>
+
+        </form>
+    </div>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const loginForm = document.querySelector("form");
+
+            loginForm.addEventListener("submit", async (e) => {
+
+                e.preventDefault();
+
+                console.log("FORM SUBMITTED");
+
+                const data = {
+                    email: document.getElementById("email").value,
+                    password: document.getElementById("password").value
+                };
+
+                console.log(data);
+
+                try {
+
+                    const response = await fetch("http://localhost:3000/login", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    console.log("RESPONSE:", response);
+
+                    const result = await response.text();
+
+                    console.log(result);
+
+                    if (response.ok) {
+                        alert(result);                         setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 1000);
+                    } else {
+                        alert("Login failed: " + result);
+                    }
+
+                } catch (error) {
+
+                    console.error("FETCH ERROR:", error);
+                    alert("Server error");
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

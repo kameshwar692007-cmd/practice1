@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Register Page</title>
+        <link rel="stylesheet" href="logstyles.css">
+    </head>
+
+    <body>
+        <div class="login-container">
+            <h1 class="login-title">Register</h1>
+            <form onsubmit="register(); return false;">
+
+                <div class="input-group">
+                    <input type="text" id="username" name="username" required placeholder="Username"><br><br>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder="Email"><br><br>
+                </div>
+
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="Password" required><br><br>
+                </div>
+
+                <div class="btn-grp">
+                    <button type="button" onclick="window.location.href='login.html'">Back To Login</button>
+                    <button type="submit">Register</button>
+                </div>
+
+            </form>
+            <div id="msg-container">
+                <p id="msg"></p><br>
+                <ol type="1">
+                    <li>Username should be unique</li>
+                    <li>Password must be at least 6 characters long</li>
+                    <li>Email must be valid</li>
+                </ol>
+            </div>
+        </div>
+        <script>
+            async function register() {
+                const data = {
+                    username: document.getElementById('username').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value
+                };
+                const response = await fetch("/register", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.text();
+                if (response.ok) {
+                    document.getElementById("msg").textContent = "*" + result;
+                    document.getElementById("msg").style.color = "green";
+                    document.getElementById("msg").style.border = "2px solid green";
+                    document.getElementById("msg").style.display = "block";
+                    
+                    setTimeout(() => {
+                        window.location.href = "index.html";
+                    }, 2000);
+
+                }
+                else {
+                    document.getElementById("msg").textContent = '*' + result;
+                    document.getElementById("msg").style.color = "red";
+                    document.getElementById("msg").style.display = "block";
+                }
+            }
+        </script>
+    </body>
+
+    </html>
